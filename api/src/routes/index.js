@@ -2,7 +2,7 @@ const { Router } = require('express');
 // Importar todos los routers;
 // Ejemplo: const authRouter = require('./auth.js');
 const axios = require('axios');
-const { Tipo, Pokemon } = require('../db');
+const { Type, Pokemon } = require('../db');
 
 const e = require('express');
 //const Pokemon = require('../models/Pokemon');
@@ -42,7 +42,7 @@ const getApiInfo = async () => {
 const getDbInfo = async () => {
     return await Pokemon.findAll({          //traeme todos los pokemon y ademas...
         include: {
-            model: Tipo,                    //incluí el modelo Tipo con atributo nombre
+            model: Type,                    //incluí el modelo Tipo con atributo nombre
             attributes: ['name'],
             through: {                      //"mendiante los atributos" (comprobacion que va siempre)
                 attributes: [],
@@ -78,23 +78,24 @@ router.get('/types', async(req, res) => {
     const apiUrl = await axios.get('https://pokeapi.co/api/v2/type') //accedo al endpoint de type
     const types = apiUrl.data.results.map(el => el.name)             //me guardo el nombre de de c/tipo en el array types
     types.forEach(t => {            //recorro el array y por c/elm creo una entrada en la db Tipo
-        Tipo.findOrCreate({         //.findOrCreate() si encuentra el tipo, lo muestra en la db y si no, lo crea en la db. Si uso .create() cada vez que haga una peticion me creará los 20 tipos.
+        Type.findOrCreate({         //.findOrCreate() si encuentra el tipo, lo muestra en la db y si no, lo crea en la db. Si uso .create() cada vez que haga una peticion me creará los 20 tipos.
             where: {
                 name: t,
             }
         })
     });
 
-    const allTypes = await Tipo.findAll();  //guardo todo lo que haya en la db Tipo.
+    const allTypes = await Type.findAll();  //guardo todo lo que haya en la db Tipo.
     res.send(allTypes);  //devuelvo solo la info de la db. Con esto me evito recorrer la api en cada peticion
 })
 
 // POST /pokemons
 router.post('/pokemons', async(req, res) => {
-    const { name, health, attack, defense, speed, height, weight, type, createdInDb } = req.body;
+    const { name, img, health, attack, defense, speed, height, weight, type, createdInDb } = req.body;
 
     let pokemonCreated = await Pokemon.create({
-        name, 
+        name,
+        img, 
         health, 
         attack, 
         defense, 
@@ -104,20 +105,20 @@ router.post('/pokemons', async(req, res) => {
         createdInDb
     }) 
 
-    let typeDb = await Tipo.findAll({   //dentro del modelo Tipo encontra todos los tipos...
+    let typeDb = await Type.findAll({   //dentro del modelo Tipo encontra todos los tipos...
         where: {            //cuyo name coincidan con el de type que recibo por body.
             name: type,
         }
     })
 
-    pokemonCreated.addTipo(typeDb);  //al pokemon creado le agrego el tipo que lo traigo de la db (.addTipo() metodo de sequelize)
+    pokemonCreated.addType(typeDb);  //al pokemon creado le agrego el tipo que lo traigo de la db (.addTipo() metodo de sequelize)
     res.send('Pokémon creado con éxito!')
 })
 
 // GET /pokemons/{idPokemon}
 
 router.get('/pokemons/:id', async(req, res) => {
-    const { id } = req.params;
+    const  { id } = req.params;
     const pokemonsTotal = await getAllPokemons();
 
     if(id){
