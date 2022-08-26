@@ -1,0 +1,101 @@
+.back-create{
+    background-color: rgb(55, 59, 82);
+    height: 880px;
+    padding: 10px;
+    
+}
+
+.create-button{
+    padding: 10px;
+}
+
+.ok{
+    height: 50px;
+    width: 200px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    background-color: green;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.not-ok{
+    height: 50px;
+    width: 200px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    background-color: rgb(110, 110, 110);
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.volver-create{
+    background-color: darkorange;
+    color: white;
+    height: 30px;
+    cursor: pointer;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 17px;
+    border-radius: 5px;
+}
+
+.title-create{
+    color: white;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-shadow: 1px 0px 1px red, -1px 0px 1px red, 0px 1px 1px red, 0px -1px 1px red ;
+
+}
+.formulario{
+    padding: 10px;
+    color: aliceblue;
+    border: 1px solid;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position:relative;
+    left: 510px;
+    margin-bottom: 10px;
+    
+}
+
+.error{
+    font-size: 12px;
+    color: red;
+    font-weight: bold;
+}
+
+.type{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    
+}
+
+.type-content{
+    border: 2px solid white;
+    border-radius: 5px;
+    background-color: black;
+    color:aliceblue;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    height: 25px;
+    width: 100px;
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content:space-around;
+}
+
+.delete-type{
+    color: red;
+    background-color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    
+}

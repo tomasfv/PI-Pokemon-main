@@ -31,6 +31,7 @@ const getApiInfo = async () => {
             health: p.stats[0].base_stat,
             attack: p.stats[1].base_stat,
             defense: p.stats[2].base_stat,
+            speed: p.stats[5].base_stat,
             height: p.height,
             weight: p.weight,
         }

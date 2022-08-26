@@ -1,0 +1,31 @@
+.background-detail{
+    background-color: rgb(55, 59, 82);
+    height: 890px;
+    color:aliceblue;
+}
+
+.details{
+    padding: 10px;
+}
+
+
+.volver{
+    background-color: darkorange;
+    color: white;
+    cursor: pointer;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 25px;
+    border-radius: 5px;
+}
+
+.name-detail{
+    color: white;
+    border: 2px solid white;
+    border-radius: 5px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-shadow: 1px 0px 1px lightseagreen, -1px 0px 1px lightseagreen, 0px 1px 1px lightseagreen, 0px -1px 1px lightseagreen;
+    width: 200px;
+    height: 45px;
+    position:relative;
+    left: 525px;
+}

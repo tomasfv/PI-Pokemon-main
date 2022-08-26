@@ -1,0 +1,24 @@
+.card{
+    background-color:rgb(250, 245, 245);
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color:black;
+    border: solid 3px red;
+    border-radius: 20px;
+    width: 200px;
+    height: 270px;
+  
+    
+}
+
+.poke-img{
+    width: 150px;
+    height: 150px
+}
+
+.card:hover{
+    background-image: url('https://cdn.dribbble.com/users/283669/screenshots/2851144/gogogo.gif');
+    background-size: cover;
+    background-position: center;
+    
+}
+

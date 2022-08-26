@@ -1,7 +1,8 @@
 import React from "react";
+import './Paginado.css';
 
 export default function Paginado({pokemonsPerPage, allPokemons, paginado}){     //toda esta info llega del componente Home
-    const pageNumbers = []
+    const pageNumbers = []     //1, 2, 3, 4
 
     for(let i = 0; i <= Math.ceil(allPokemons/pokemonsPerPage) - 1; i++){
         pageNumbers.push(i + 1)
@@ -10,10 +11,10 @@ export default function Paginado({pokemonsPerPage, allPokemons, paginado}){     
     return(
         <nav>
             <ul className="paginado"> 
-                { pageNumbers &&
+                { pageNumbers &&              //si pageNumbers es true, los mapeo y renderizo una lista con los nºs de página
                     pageNumbers.map(number => (
                     <li className="number" key={number}>
-                        <a onClick={() => paginado(number)}>{number}</a>
+                        <a onClick={() => paginado(number)}>{number}</a>  {/* al clickear ejecuto paginado con ese nº como argumento */}
                     </li>
                 ))}
 

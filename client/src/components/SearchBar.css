@@ -1,0 +1,13 @@
+.buscar{
+    background-color: cornflowerblue;
+    color: white;
+    border-radius: 5px;
+    font-size: 17px;
+    cursor: pointer;
+}
+
+.input-buscar{
+    border: 2px solid;
+    border-radius: 5px;
+    height: 17px;
+}

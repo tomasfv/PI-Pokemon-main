@@ -1,16 +1,23 @@
 import React from 'react';
+import "./LandingPage.css";
 import { Link } from 'react-router-dom';
 
 
 export default function LandingPage(){
     return(
-        <div>
-            <h1>Esta es la Landing Page del PI-Pokémon</h1>
-            <Link to ='/home'>
-                <button>INGRESAR</button>
-            </Link>
-            
+
+        <div className='img'>
+            <div className='text'>
+                <div>
+                    <h1>Bienvenidos a Pokémon Web</h1>
+                    <Link to ='/home'>
+                    <button className='button'>INGRESAR</button>
+                    </Link>
+                </div>   
+            </div>
         </div>
+        
+        
         
     )
 }
