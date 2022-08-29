@@ -28,9 +28,10 @@ function rootReducer(state = initialState, action) {    //el argumento action re
             let fullPokemons2 = state.allPokemons
             let resultApi = fullPokemons2.filter(p => p.type && p.type.includes(action.payload))
             let resultDb = fullPokemons2.filter(p => p.types && p.types.map(t => t.name).includes(action.payload))
+            let result = resultApi.concat(resultDb)
             return {
                 ...state,
-                pokemons: resultApi.concat(resultDb)
+                pokemons: result
             }
 
         case "ORDER_BY_NAME":

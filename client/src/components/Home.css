@@ -56,3 +56,10 @@
     margin: 50px;
     left: 50px   
 }
+
+.loading-charmander{
+    position:relative;
+    left: 350px;
+    color: white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}

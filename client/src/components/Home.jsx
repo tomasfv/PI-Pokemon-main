@@ -108,8 +108,9 @@ export default function Home(){
                     />
                 </div>
                 <div className='orden'>
-                    { currentPokemons?.map((p) => {     //recorro todos los pokemons
-                        return (
+                    {currentPokemons.length > 0 ?       //si el estado pokemons tiene algo...
+                    currentPokemons?.map((p) => {       //recorro todos los pokemons
+                         return (
                             <div>
                                 <Link to={"/home/" + p.id} className='link'>
                                     <div>
@@ -123,7 +124,11 @@ export default function Home(){
                                 </Link>
                             </div>
                             );
-                        })}
+                        }) :<div className='loading-charmander'>    {/*sino, renderizo loading */}
+                            <h3>Loading . . .</h3>
+                            <img src='http://pa1.narvii.com/6189/91fe76722f8fe4b9ab1b851ee9ee168ab22cec06_00.gif'/>  
+                            </div> }
+                            
             </div>
                 </div>
         </div>

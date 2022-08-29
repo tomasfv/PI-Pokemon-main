@@ -49,6 +49,7 @@ export function filterCreated(payload){
 }
 
 export function filterType(payload){
+    
     return{
         type: "FILTER_TYPE",
         payload,
