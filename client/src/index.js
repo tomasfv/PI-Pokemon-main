@@ -6,6 +6,13 @@ import reportWebVitals from './reportWebVitals';
 import { Provider } from "react-redux";
 import { store } from "./store";
 
+import dotenv from 'dotenv';  //deploy
+import axios from 'axios';
+
+dotenv.config();
+
+axios.defaults.baseURL = process.env.REACT_APP_API || 'http://localhost:3001';  //deploy punta al localhost de back
+
 ReactDOM.render(
   <Provider store={store}>
   <React.StrictMode>

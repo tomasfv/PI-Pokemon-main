@@ -2,7 +2,7 @@ import axios from 'axios';
 
 export function getPokemons(){
     return async function(dispatch){    //Acá es donde sucede toda la conexión entre el Front y el Back.
-        var json = await axios.get("http://localhost:3001/pokemons", {});  //ruta del back que me muestra todos los pokemons
+        var json = await axios.get("/pokemons", {});  //ruta del back que me muestra todos los pokemons
         return dispatch({
             type: 'GET_POKEMONS',
             payload: json.data
@@ -13,7 +13,7 @@ export function getPokemons(){
 export function getNamePokemons(name){
     return async function (dispatch){
         try{
-            var json = await axios.get("http://localhost:3001/pokemons?name=" + name);
+            var json = await axios.get("/pokemons?name=" + name);
             return dispatch({
                 type: "GET_NAME_POKEMONS",
                 payload: json.data
@@ -26,7 +26,7 @@ export function getNamePokemons(name){
 
 export function getTypes(){                 //hace un request GET al back y trae todos los tipos de pokemon desde la db
     return async function(dispatch){
-        var info = await axios.get("http://localhost:3001/types", {});  //trae [{id: 1, name: fighting}, {id:2, name: normal}, ...]
+        var info = await axios.get("/types", {});  //trae [{id: 1, name: fighting}, {id:2, name: normal}, ...]
         return dispatch({
             type: "GET_TYPES",              //Despacha la action GET_TYPES con el array de objetos en formato .js
             payload: info.data           //info.data será lo que me trajo el axios ya en formato Javascript
@@ -36,7 +36,7 @@ export function getTypes(){                 //hace un request GET al back y trae
 
 export function postPokemon(payload){
     return async function(dispatch){
-        const response = await axios.post("http://localhost:3001/pokemons", payload);
+        const response = await axios.post("/pokemons", payload);
         return response;
     }
 }
@@ -73,7 +73,7 @@ export function orderByAttack(payload){
 export function getDetail(id){
     return async function(dispatch){
         try{
-            var json = await axios.get('http://localhost:3001/pokemons/' + id);
+            var json = await axios.get('/pokemons/' + id);
             return dispatch({ type: "GET_DETAILS", payload: json.data })
         }catch(error){
             console.log(error)
