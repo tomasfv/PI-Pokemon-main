@@ -125,12 +125,12 @@ export default function PokemonCreate(){
             <form onSubmit={(e) => handleSubmit(e)}>    {/*al clickear el boton de L188 se ejecuta handleSubmit*/}
                 <div className="formulario">
                     <label>Nombre: </label>
-                    <input type='text' value={input.name} name='name' onChange={(e) => handleChange(e)}/> {/*Cuando hay un cambio en el input Nombre se ejecuta handleChange */}
+                    <input type='text' value={input.name} name='name' maxLength="22" placeholder="nombre..." onChange={(e) => handleChange(e)}/> {/*Cuando hay un cambio en el input Nombre se ejecuta handleChange */}
                     {errors.name && <p className="error">{errors.name}</p>}    {/*si el estado errors tiene la prop name, renderizo un parrafo con el string de ésta prop */}
                 </div>
                 <div className="formulario">
                     <label>Imagen(URL): </label>
-                    <input type='text' value={input.img} name='img' onChange={(e) => handleChange(e)}/>
+                    <input type='text' value={input.img} name='img' placeholder="imagen..." onChange={(e) => handleChange(e)}/>
                     {errors.img && <p className="error">{errors.img}</p>}
                 </div>
                 <div className="formulario">

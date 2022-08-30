@@ -5,7 +5,7 @@ const morgan = require('morgan');
 const routes = require('./routes/index.js');
 
 require('./db.js');
-//DePLOY EZE
+//DEPLOY
 const server = express();
 const cors = require('cors');
 
@@ -30,9 +30,7 @@ server.use((req, res, next) => {
 	);
 	next();
 });
-
-
-
+//DEPLOY-----------------------------------------------------------------------------------------------------
 
 server.use('/', routes);
 

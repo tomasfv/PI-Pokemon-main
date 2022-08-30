@@ -18,11 +18,14 @@
 //                       `=---='
 //     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 const server = require('./src/app.js');
-const { conn } = require('./src/db.js');
+const { conn } = require('./src/db.js');      //importo la conexión sequelize
 
 // Syncing all the models at once.
-conn.sync({ force: false }).then(() => {                    //false para el deploy
-  server.listen(process.env.PORT || 3001, () => {           //deploy
+conn.sync({ force: true }).then(() => {       //.sync() sincroniza los modelos con la db  //true por default, false para el deploy
+  server.listen(process.env.PORT || 3001, () => {  //puerto 3001 para el back y db         //DEPLOY
     console.log('%s listening at 3001'); // eslint-disable-line no-console
   });
 });
+
+
+//Model.sync({force: true}): elimina (drop) la tabla y luego la vuelve a crear

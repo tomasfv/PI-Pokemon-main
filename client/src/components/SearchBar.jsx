@@ -34,3 +34,8 @@ export default function SearchBar() {
 1º guardo en name lo que el usuario escribe en el input a traves setName().
 2º cuando el usuario haga click en Buscar le paso al back la acción getNamePokemons() con name como arg.
 */
+
+
+
+  
+  

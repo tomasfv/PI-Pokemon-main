@@ -26,13 +26,12 @@ export default function Home(){
     }
 
 
-    useEffect (() =>{                   //Manejo de ciclos de vida
-        dispatch(getPokemons());        //cuando se monta el componente, me traigo todos los pokemons
-        dispatch(getTypes());           //cuando se monta el componente, me traigo todos los types
+    useEffect (() =>{                       //Manejo de ciclos de vida
+        if(!allPokemons[0]){             //mantengo los filtros cuando monto el componente
+            dispatch(getPokemons());        //cuando se monta el componente, me traigo todos los pokemons
+            dispatch(getTypes());           //cuando se monta el componente, me traigo todos los types    
+         }
     }, [dispatch]);
-    
-    // useEffect(() => {
-    // }, [dispatch]);
 
     function handleClick(e){            //Reset
         e.preventDefault();             //preventDefault para que cuando recargue no se rompa todo.
@@ -75,7 +74,7 @@ export default function Home(){
                 
             </div>
             <button className='reset' onClick={ e => {handleClick(e)}}>
-                Volver a Cargar Todos Los Pokemons
+                RESETEAR FILTROS
             </button>
             <div>
                 <select  value='default'  onChange={e => handleSort(e)}>
@@ -129,7 +128,7 @@ export default function Home(){
                             <img src='http://pa1.narvii.com/6189/91fe76722f8fe4b9ab1b851ee9ee168ab22cec06_00.gif'/>  
                             </div> }
                             
-            </div>
+                </div>
                 </div>
         </div>
     )
