@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getPokemons, filterCreated, orderByName, filterType, getTypes, orderByAttack } from '../actions';
+import { getPokemons, filterCreated, orderByName, filterType, getTypes, orderByAttack} from '../actions';
 import { Link } from 'react-router-dom';
 import Card from './Card';
 import Paginado from './Paginado';
@@ -58,9 +58,8 @@ export default function Home(){
         dispatch(orderByAttack(e.target.value)); //el value puede ser asc/desc
         setCurrentPage(1);
         setOrden(`Ordenado ${e.target.value}`)
-
     }
-
+    
 
     return (                                            //Renderizado del Componente
         <div className='prueba'>
@@ -76,7 +75,7 @@ export default function Home(){
             <button className='reset' onClick={ e => {handleClick(e)}}>
                 RESETEAR FILTROS
             </button>
-            <div>
+            <div>   
                 <select  value='default'  onChange={e => handleSort(e)}>
                     <option value='default' disabled hidden>Nombre</option>
                     <option value='asc'>Ascendente</option>
@@ -116,20 +115,46 @@ export default function Home(){
                                         <Card                   //le paso al comp card:
                                             name={p.name} 
                                             image={p.img ? p.img : p.image} 
-                                            types={p.createdInDb ? p.types.map(p => p.name + " ") : p.type +" "} 
+                                            types={p.createdInDb ? p.types.map(p => p.name + " ") : p.type.map(p => p + " " )} 
                                             key={p.id}
                                         />  {/*Props de getApiInfo() en api/routes/index.js*/}
                                     </div>
                                 </Link>
                             </div>
                             );
-                        }) :<div className='loading-charmander'>    {/*sino, renderizo loading */}
-                            <h3>Loading . . .</h3>
-                            <img src='http://pa1.narvii.com/6189/91fe76722f8fe4b9ab1b851ee9ee168ab22cec06_00.gif'/>  
-                            </div> }
+                        }) :    <div className='loading-charmander'>    {/*sino, renderizo loading */}
+                                    <h3>Loading . . .</h3>
+                                    <img src='http://pa1.narvii.com/6189/91fe76722f8fe4b9ab1b851ee9ee168ab22cec06_00.gif'/>  
+                                </div> }
                             
                 </div>
                 </div>
         </div>
     )
 }
+
+//------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//---------------------------------------------------------------------------------------------------------------
+
+//DELETE BUTTON
+
+// function handleDelete(e){
+    // dispatch(deletePokemon(e.target.value))   //el value será el id
+    // }
+
+{/* {p.createdInDb && <button type='button' value={p.id} onClick={e => handleDelete(e)}>X</button>} */}

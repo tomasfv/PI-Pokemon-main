@@ -102,7 +102,7 @@ function rootReducer(state = initialState, action) {    //el argumento action re
                 ...state,
                 detail: []
 
-            }    
+            }
         case "GET_NAME_POKEMONS":
                 return{
                     ...state,
@@ -115,3 +115,26 @@ function rootReducer(state = initialState, action) {    //el argumento action re
 }
 
 export default rootReducer;
+
+//----------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+//---------------------------------------------------------------------------------------------------------------
+
+//DELETE POKEMON:
+
+   // case "DELETE_POKEMON":
+            
+        //     // let filtDb = state.allPokemons.filter(el => el.id !== action.payload)
+        //     // let final = filtDb.filter(el => !el.action.payload)
+        //     console.log(action.payload)
+        //     return{
+        //         ...state,
+        //         pokemons: action.payload,
+        //     }   

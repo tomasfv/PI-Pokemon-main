@@ -15,6 +15,7 @@ export default function Paginado({pokemonsPerPage, allPokemons, paginado}){     
                     pageNumbers.map(number => (
                     <li className="number" key={number}>
                         <a onClick={() => paginado(number)}>{number}</a>  {/* al clickear ejecuto paginado con ese nº como argumento */}
+                        {/* <button className="boton-pag" onClick={() => paginado(number)}>{number}</button> */}
                     </li>
                 ))}
 

@@ -132,6 +132,27 @@ router.get('/pokemons/:id', async(req, res) => {
 })
 
 
-
-
 module.exports = router;
+
+//---------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+//------------------------------------------------------------------------------------------------------------------
+
+// // DELETE /delete-pokemons/:id
+// router.delete('/delete-pokemons/:id', async (req, res) => {
+//     let { id } = req.params
+    
+//     const pokeDb = await Pokemon.findAll();
+//     let deletFilter = pokeDb.filter(el => el.id !== id)
+//     deletFilter.length?  res.status(200).send(deletFilter) : res.status(400).send('error al borrar')
+
+// });
