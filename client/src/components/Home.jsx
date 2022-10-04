@@ -64,40 +64,44 @@ export default function Home(){
     return (                                            //Renderizado del Componente
         <div className='prueba'>
             <div className='white'>
-                <Link to='/pokemon'><button className='crear'>Crear Pokémon</button></Link>
+              <div className='first-navbar'>  
                 <h1 className='titulo'>POKEMON WEB</h1>
+                <Link to='/pokemon'><button className='crear'>CREATE</button></Link>
+              </div>  
                 <SearchBar/>                         
 
             </div>
             <div>
                 
             </div>
-            <button className='reset' onClick={ e => {handleClick(e)}}>
-                RESETEAR FILTROS
-            </button>
-            <div>   
-                <select  value='default'  onChange={e => handleSort(e)}>
-                    <option value='default' disabled hidden>Nombre</option>
-                    <option value='asc'>Ascendente</option>
-                    <option value='Desc'>Descendente</option>
+            <div>
+              <div className='filt-bar'>     
+                <select className='filter' value='default'  onChange={e => handleSort(e)}>
+                    <option value='default' disabled hidden>NAME</option>
+                    <option value='asc'>A-z</option>
+                    <option value='Desc'>Z-a</option>
                 </select>
-                <select value='default' onChange={e => handleAttackSort(e)}>
-                    <option value='default' disabled hidden>Ataque</option>
-                    <option value='max'>Mayor Ataque</option>
-                    <option value='min'>Menor Ataque</option>
+                <select className='filter' value='default' onChange={e => handleAttackSort(e)}>
+                    <option value='default' disabled hidden>ATTACK</option>
+                    <option value='max'>+ Attack</option>
+                    <option value='min'>- Attack</option>
                 </select>
-                <select value='default' onChange={e => handleFilterCreated(e)}>
-                    <option value='default' disabled hidden>Origen</option>
-                    <option value='All'>Todos</option>
-                    <option value='created'>Creados</option>
-                    <option value='api'>Existentes</option> 
+                <button className='reset' onClick={ e => {handleClick(e)}}>
+                    RESET
+                </button>
+                <select className='filter' value='default' onChange={e => handleFilterCreated(e)}>
+                    <option value='default' disabled hidden>ORIGIN</option>
+                    <option value='All'>All</option>
+                    <option value='created'>Created</option>
+                    <option value='api'>API</option> 
                 </select>
-                <select value='default' onChange={e => handleFilterType(e)}>             {/* cuando seleccino un tipo, se ejecuta el handle */}
-                    <option value='default' disabled hidden>Tipo</option>
+                <select className='filter' value='default' onChange={e => handleFilterType(e)}>             {/* cuando seleccino un tipo, se ejecuta el handle */}
+                    <option value='default' disabled hidden>TYPE</option>
                     {types.map((t) => (                                 //recorro el estado types y por cada tipo ...
                             <option value={t.name} key={t.name}>{t.name}</option>   //renderizo un option con el nombre de cada uno en el select
                         ))}
                 </select>
+            </div>
                 <div>
                     <Paginado 
                         pokemonsPerPage = {pokemonsPerPage}     //le paso al comp paginado el estado pPP
@@ -116,15 +120,18 @@ export default function Home(){
                                             name={p.name} 
                                             image={p.img ? p.img : p.image} 
                                             types={p.createdInDb ? p.types.map(p => p.name + " ") : p.type.map(p => p + " " )} 
+                                            // attack={p.attack}
                                             key={p.id}
                                         />  {/*Props de getApiInfo() en api/routes/index.js*/}
                                     </div>
                                 </Link>
                             </div>
                             );
-                        }) :    <div className='loading-charmander'>    {/*sino, renderizo loading */}
-                                    <h3>Loading . . .</h3>
-                                    <img src='http://pa1.narvii.com/6189/91fe76722f8fe4b9ab1b851ee9ee168ab22cec06_00.gif'/>  
+                        }) :    <div className='loading-pikachu'>    {/*sino, renderizo loading */}
+                                    {/* <h3>Loading . . .</h3> */}
+                                    {/* <img src='http://pa1.narvii.com/6189/91fe76722f8fe4b9ab1b851ee9ee168ab22cec06_00.gif'/>   */}
+                                    <img src='https://data.whicdn.com/images/105290823/original.gif' width='350px' height='350px'/>  
+
                                 </div> }
                             
                 </div>

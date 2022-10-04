@@ -1,13 +1,43 @@
 .buscar{
-    background-color: cornflowerblue;
+    background: #C50707;
     color: white;
-    border-radius: 5px;
-    font-size: 17px;
+    font-weight: bold;
+    border-radius: 100%;
+    width: 67px;
+    height: 60px;
+    font-size: 25px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     cursor: pointer;
+    border: black solid 8px;
+    position: absolute;
+    top: 52px;
+    text-shadow: 1px 0px 1px black, -1px 0px 1px black, 0px 1px 1px black, 0px -1px 1px black ;
+}
+
+.buscar:hover{
+    background: white;
+    color: #C50707;
+    text-shadow: 1px 0px 1px black, -1px 0px 1px black, 0px 1px 1px black, 0px -1px 1px black ;
+    
 }
 
 .input-buscar{
     border: 2px solid;
-    border-radius: 5px;
-    height: 17px;
+    border-radius: 50px;
+    height: 30px;
+    width: 300px;
+    border: black solid 3px;
+    padding-left: 4px;
+    position: absolute;
+    top: 15px
+}
+
+.search-div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: black;
+    height: 10px;
+    margin-top: 20px;
+
 }

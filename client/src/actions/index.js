@@ -1,4 +1,6 @@
 import axios from 'axios';
+import swal from'sweetalert2';
+
 
 export function getPokemons(){
     return async function(dispatch){    //Acá es donde sucede toda la conexión entre el Front y el Back.
@@ -21,7 +23,13 @@ export function getNamePokemons(name){
                 payload: json.data
             })
         }catch(error){
-            return alert (`No se encontró el Pokémon ${name}`)
+            return swal.fire({
+                position: 'top-end',
+                icon: 'error',
+                title: 'Pokémon Not Found',
+                showConfirmButton: false,
+                timer: 4000
+              })
             
         }
     }

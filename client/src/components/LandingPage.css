@@ -1,3 +1,17 @@
+.img{
+    background-image: url('https://images7.alphacoders.com/592/592678.jpg');
+    /* background-image: url('https://c.tenor.com/8sTMqGWjYAQAAAAC/ball-pokemon.gif'); */
+    /* height: 800px;
+    width: 800px; */
+    margin: 0;
+    padding: 0;
+    height: 880px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;   
+}
+
 .text{
     
     position: absolute;
@@ -15,19 +29,6 @@
     width: 750px;
   }
 
-.img{
-    background-image: url('https://images7.alphacoders.com/592/592678.jpg');
-    /* background-image: url('https://c.tenor.com/8sTMqGWjYAQAAAAC/ball-pokemon.gif'); */
-    /* height: 800px;
-    width: 800px; */
-    height: 880px;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
-    
-   
-}
 
 .button{
     height: 30px;

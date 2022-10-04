@@ -1,5 +1,5 @@
 .back-create{
-    background-color: rgb(55, 59, 82);
+    background-color: black;
     height: 1000px;
     padding: 10px;
     /* min-height: 100vh;
@@ -21,38 +21,48 @@
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-weight: bold;
     font-size: 20px;
-    background-color: green;
-    color: white;
+    background-color: white;
+    color: #C50707;
     border-radius: 5px;
     cursor: pointer;
 }
 
 .not-ok{
     height: 50px;
-    width: 200px;
+    width: 260px;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-weight: bold;
     font-size: 20px;
-    background-color: rgb(110, 110, 110);
-    color: white;
-    border-radius: 5px;
-    cursor: pointer;
+    background-color: #C50707;
+    color: black;
+    border-radius: 0px;
+    cursor: not-allowed;
 }
 
 .volver-create{
-    background-color: darkorange;
-    color: white;
-    height: 30px;
+    height: 40px;
+    width: 100px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    background: black;
+    color:#C50707;
+    border-radius: 10px;
+    border:#C50707 solid 3px;
     cursor: pointer;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 17px;
-    border-radius: 5px;
+    margin: 10px;
+    flex-wrap: wrap;
+}
+
+.volver:hover{
+    background: white;
 }
 
 .title-create{
     color: white;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     text-shadow: 1px 0px 1px red, -1px 0px 1px red, 0px 1px 1px red, 0px -1px 1px red ;
+    margin: 20px;
 
 }
 .formulario{
@@ -88,7 +98,7 @@
     border: 2px solid white;
     border-radius: 5px;
     background-color: black;
-    color:aliceblue;
+    color: white;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     height: 25px;
     width: 100px;
@@ -102,6 +112,10 @@
     color: red;
     background-color: white;
     border-radius: 5px;
+    padding-left: 4px;
+    padding-top: 1px;
+    padding-right: 4px;
+    padding-bottom: 1px;
     cursor: pointer;
     
 }

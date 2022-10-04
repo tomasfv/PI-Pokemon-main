@@ -120,8 +120,8 @@ export default function PokemonCreate(){
     
     return(
         <div className="back-create">
-            <Link to='/home'><button className="volver-create">volver</button></Link>
-            <h1 className="title-create">Crea Tu Pokémon</h1>
+            <Link to='/home'><button className="volver-create">BACK</button></Link>
+            <h1 className="title-create">CREATE  YOUR  POKÉMON</h1>
             <form onSubmit={(e) => handleSubmit(e)}>    {/*al clickear el boton de L188 se ejecuta handleSubmit*/}
                 <div className="formulario">
                     <label>Nombre: </label>
@@ -187,8 +187,8 @@ export default function PokemonCreate(){
                 </div>
                 <div className="create-button">
                     {Object.keys(errors).length || !input.type.length ? 
-                        <button className="not-ok" type='submit' disabled>Crear Pokémon</button> : 
-                        <button className="ok" type='submit'>Crear Pokémon</button> }               {/*cuando clickeo el boton (que es tipo submit), se 'envia' el formulario L125  */}
+                        <button className="not-ok" type='submit' disabled>please complete the form</button> : 
+                        <button className="ok" type='submit'>CREATE</button> }               {/*cuando clickeo el boton (que es tipo submit), se 'envia' el formulario L125  */}
                 </div>
                 
             </form>

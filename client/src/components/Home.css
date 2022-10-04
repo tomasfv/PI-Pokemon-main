@@ -1,24 +1,32 @@
 .prueba {
-    background-color: rgb(55, 59, 82);
+    background-color: black;
     padding: 0;
     margin: 0;
-    height: 1300px;  
+    height: 1300px;   
 }
 
 .white {
-    color: white;
-    padding: 15px;    
+    color: white;   
 }
 
 .titulo{
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 50px;
-    text-shadow: 1px 0px 1px red, -1px 0px 1px red, 0px 1px 1px red, 0px -1px 1px red ;
+    text-shadow: 1px 0px 1px black, -1px 0px 1px black, 0px 1px 1px black, 0px -1px 1px black ;
 }
 
 .link{
     text-decoration: none;
     text-shadow: 1px 0px 1px white, -1px 0px 1px white, 0px 1px 1px white, 0px -1px 1px white ;
+}
+
+.first-navbar{
+    background: #C50707;
+    padding: 5px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 .crear{
@@ -27,52 +35,75 @@
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-weight: bold;
     font-size: 15px;
-    background-color: green;
-    color: white;
+    margin-top: 7px;
+    background-color: black;
+    color: #C50707;
     border-radius: 5px;
     cursor: pointer;
 }
 
 .reset{
     height: 40px;
-    width: 350px;
+    width: 150px;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-weight: bold;
-    font-size: 15px;
-    background-color:rgba(41, 40, 40, 0.774);
-    color: white;
-    border-radius: 5px;
-    border-color: aliceblue;
+    font-size: 20px;
+    background: black;
+    color:#C50707;
+    border-radius: 10px;
+    border:#C50707 solid 3px;
     cursor: pointer;
-    margin: 10px;
+    margin-top: 27px;
+    margin-bottom: 10px;
+    position:relative;
+    left: 0.5% 
+
 }
 
 
 .orden{
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
     grid-gap: 20px;
     position:relative;
     margin: 50px;
-    left: 50px   
+    left: 50px ;     
 }
 
-.loading-charmander{
-    position:relative;
-    left: 350px;
+.filter{
+    background-color: black;
     color: white;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: bold;
+    font-size: 15px;
+    cursor: pointer;
+    border: solid 1px white;
+    border-radius: 10px;
+    margin-top: 12px;
+    padding-left: 4px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    
 }
 
-.filt-names-cont{
-    display:flex;
+.filt-bar{
+    background: white;
+    display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
-    color: white;
-    font-size: 12px;
+    justify-content:space-around;
 }
 
-.filt-names{
-    margin-left: 40px
+.loading-pikachu{
+    position:absolute;
+    left: 30%;
+    
+     
+
 }
+
+/* @media screen and (max-width: 500px){
+    .loading-charmander{
+        border: solid 5px
+    }
+} */

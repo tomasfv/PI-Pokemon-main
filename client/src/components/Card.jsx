@@ -5,7 +5,7 @@ import './Card.css';
 
 
 
-export default function Card({ name, image, types}){
+export default function Card({ name, image, types, attack}){
     
 
 
@@ -13,6 +13,7 @@ export default function Card({ name, image, types}){
         <div className='card' >
             <h3>{name}</h3>
             <h5>{types}</h5>
+            {/* <h5>ataque: {attack}</h5> */}
             <img className='poke-img' src={image} alt='img not found' />
         </div>
 
