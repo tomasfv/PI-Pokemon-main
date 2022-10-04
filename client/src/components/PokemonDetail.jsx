@@ -43,9 +43,9 @@ export default function PokemonDetail(){
                     <h2><GiHearts/> HP: {myPokemon[0].health}</h2>
                     <h2><GiCrossedSwords/> ATTACK: {myPokemon[0].attack}</h2>
                     <h2><GiCheckedShield/> DEFENSE: {myPokemon[0].defense}</h2>
-                    <h2><BsSpeedometer/> SPEED: {myPokemon[0].speed}km/h</h2>
-                    <h2><AiOutlineColumnHeight/> HEIGHT: {myPokemon[0].height}cm</h2>
-                    <h2><FaBalanceScaleLeft/> WEIGHT: {myPokemon[0].weight}Kg</h2>
+                    <h2><BsSpeedometer/> SPEED: {myPokemon[0].speed}</h2>
+                    <h2><AiOutlineColumnHeight/> HEIGHT: {myPokemon[0].height}</h2>
+                    <h2><FaBalanceScaleLeft/> WEIGHT: {myPokemon[0].weight}</h2>
                     <h2><AiOutlineNumber/> ID: {myPokemon[0].id}</h2>                    
                     </div>
                 </div> : <img src="https://vincentrenault.fr/wp-content/uploads/2019/11/pokeball.gif" className="pokeball-gif"/>      //si está vacio, renderizo esto
