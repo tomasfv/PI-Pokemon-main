@@ -1,3 +1,7 @@
+* {
+    margin: 0;
+    padding: 0;
+}
 .prueba {
     background-color: black;
     padding: 0;
@@ -17,7 +21,7 @@
 
 .link{
     text-decoration: none;
-    text-shadow: 1px 0px 1px white, -1px 0px 1px white, 0px 1px 1px white, 0px -1px 1px white ;
+    
 }
 
 .first-navbar{
@@ -38,8 +42,12 @@
     margin-top: 7px;
     background-color: black;
     color: #C50707;
-    border-radius: 5px;
+    border-radius: 7px;
     cursor: pointer;
+}
+
+.crear:hover{
+    color: white;
 }
 
 .reset{
@@ -56,10 +64,14 @@
     margin-top: 27px;
     margin-bottom: 10px;
     position:relative;
-    left: 0.5% 
-
+    left: 0.5% ;
+    text-shadow: 1px 0px 1px black, -1px 0px 1px black, 0px 1px 1px black, 0px -1px 1px black ;
 }
 
+.reset:hover{
+    color: white;
+    
+}
 
 .orden{
     display: grid;

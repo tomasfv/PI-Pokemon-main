@@ -15,7 +15,7 @@ const router = Router();
 
 const getApiInfo = async () => {                                                    //funcion asincrona
     const pokeUrl = []; 
-    const apiUrl = await axios.get('https://pokeapi.co/api/v2/pokemon?limit=120'); //obtengo el array results: [{name + url de los primeros 40}] 
+    const apiUrl = await axios.get('https://pokeapi.co/api/v2/pokemon?limit=60'); //obtengo el array results: [{name + url de los primeros 40}] 
     
     apiUrl.data.results.forEach(el => {                             
         pokeUrl.push(axios.get(el.url).then(resp => resp.data));    //pusheo el contenido de la url de c/pokemon(obj {name, id, img, etc})

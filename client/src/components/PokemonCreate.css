@@ -1,3 +1,8 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
 .back-create{
     background-color: black;
     height: 1000px;
@@ -10,6 +15,8 @@
     justify-content: center; */
     
 }
+
+
 
 .create-button{
     padding: 10px;
@@ -54,7 +61,7 @@
     flex-wrap: wrap;
 }
 
-.volver:hover{
+.volver-create:hover{
     background: white;
 }
 

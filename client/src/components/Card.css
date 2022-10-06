@@ -1,6 +1,12 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
 .card{
     background-color:rgb(250, 245, 245);
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    /*font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;*/
+    font-family: 'Copperplate Gothic Light';
     color:black;
     border: solid 3px #C50707;
     border-radius: 20px;
@@ -19,10 +25,16 @@
 }
 
 .card:hover{
-    background-image: url('https://cdn.dribbble.com/users/283669/screenshots/2851144/gogogo.gif');
-    background-size: cover;
+    /* background-image: url('https://cdn.dribbble.com/users/283669/screenshots/2851144/gogogo.gif'); */
+    background-image: url('https://i.gifer.com/EXfY.gif');
+    background-size:115%;
     background-position: center;
+    
+    
     transform: scale(1.05);
+    color: white;
+    text-shadow: 0.5px 0px 0.5px #C50707, -0.5px 0px 0.5px #C50707, 0px 0.5px 0.5px #C50707, 0px -0.5px 0.5px #C50707
+    
     
 }
 

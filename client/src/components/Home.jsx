@@ -12,6 +12,14 @@ export default function Home(){
     const dispatch = useDispatch();
     const allPokemons = useSelector ((state) => state.pokemons); //40 de la api
     const types = useSelector((state) => state.types);         //traigo el estado types con todos los tipos que me traje con el useEffect
+    const [loading, setLoading] = useState(false);
+
+    const cambiarEstado = () => {
+        setLoading(true);
+        setTimeout(() =>{
+            setLoading(false)
+        }, 3000)
+    }
 
     //PAGINADO.
     const [currentPage, setCurrentPage] = useState(1);                      //La Home abre en la primera página
@@ -86,9 +94,10 @@ export default function Home(){
                     <option value='max'>+ Attack</option>
                     <option value='min'>- Attack</option>
                 </select>
-                <button className='reset' onClick={ e => {handleClick(e)}}>
+                <button className='reset' onClick={(e) => {handleClick(e); cambiarEstado()}}>
                     RESET
                 </button>
+                {loading && <img className='buscar-gif' src='https://cdn.dribbble.com/users/621155/screenshots/2835314/simple_pokeball.gif'></img> }
                 <select className='filter' value='default' onChange={e => handleFilterCreated(e)}>
                     <option value='default' disabled hidden>ORIGIN</option>
                     <option value='All'>All</option>
@@ -128,10 +137,7 @@ export default function Home(){
                             </div>
                             );
                         }) :    <div className='loading-pikachu'>    {/*sino, renderizo loading */}
-                                    {/* <h3>Loading . . .</h3> */}
-                                    {/* <img src='http://pa1.narvii.com/6189/91fe76722f8fe4b9ab1b851ee9ee168ab22cec06_00.gif'/>   */}
                                     <img src='https://data.whicdn.com/images/105290823/original.gif' width='350px' height='350px'/>  
-
                                 </div> }
                             
                 </div>

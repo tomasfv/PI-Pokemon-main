@@ -28,7 +28,7 @@ export function getNamePokemons(name){
                 icon: 'error',
                 title: 'Pokémon Not Found',
                 showConfirmButton: false,
-                timer: 4000
+                timer: 2000
               })
             
         }

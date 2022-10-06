@@ -3,6 +3,8 @@ import {Link, useHistory} from 'react-router-dom';
 import {useDispatch, useSelector} from "react-redux";
 import {postPokemon, getTypes} from '../actions/index';
 import './PokemonCreate.css'
+import swal from'sweetalert2';
+
 
 //FUNCION VALIDADORA
 function validate(input){                            //va a recibir el estado input con los cambios detectados por los handlers
@@ -90,7 +92,14 @@ export default function PokemonCreate(){
     function handleSubmit(e){                       //recibe toda la info del formulario
         e.preventDefault();
         dispatch(postPokemon(input))                //crea un pokemon con la info que se fue guardando en el estado input
-        alert("Pokémon Creado Con Éxito!")
+        //alert("Pokémon Creado Con Éxito!")
+        swal.fire({
+            position: 'top-end',
+            icon: 'success',
+            title: 'Pokémon Created!',
+            showConfirmButton: false,
+            timer: 2000,
+          })
         setInput({                                  //resetea el estado input a su estado original
             name:"",
             img:"",
