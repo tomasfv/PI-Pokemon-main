@@ -9,9 +9,9 @@ export default function LandingPage(){
         <div className='img'>
             <div className='text'>
                 <div>
-                    <h1>Bienvenidos a Pokémon Web</h1>
+                    <h1>Welcome to Pokémon Web</h1>
                     <Link to ='/home'>
-                    <button className='button'>INGRESAR</button>
+                    <button className='button'>HOME</button>
                     </Link>
                 </div>   
             </div>

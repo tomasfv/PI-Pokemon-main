@@ -133,42 +133,42 @@ export default function PokemonCreate(){
             <h1 className="title-create">CREATE  YOUR  POKÉMON</h1>
             <form onSubmit={(e) => handleSubmit(e)}>    {/*al clickear el boton de L188 se ejecuta handleSubmit*/}
                 <div className="formulario">
-                    <label>Nombre: </label>
-                    <input type='text' value={input.name} name='name' maxLength="22" placeholder="nombre..." onChange={(e) => handleChange(e)}/> {/*Cuando hay un cambio en el input Nombre se ejecuta handleChange */}
+                    <label>Name: </label>
+                    <input type='text' value={input.name} name='name' maxLength="22" placeholder="name..." onChange={(e) => handleChange(e)}/> {/*Cuando hay un cambio en el input Nombre se ejecuta handleChange */}
                     {errors.name && <p className="error">{errors.name}</p>}    {/*si el estado errors tiene la prop name, renderizo un parrafo con el string de ésta prop */}
                 </div>
                 <div className="formulario">
-                    <label>Imagen(URL): </label>
-                    <input type='text' value={input.img} name='img' placeholder="imagen..." onChange={(e) => handleChange(e)}/>
+                    <label>Image(URL): </label>
+                    <input type='text' value={input.img} name='img' placeholder="image..." onChange={(e) => handleChange(e)}/>
                     {errors.img && <p className="error">{errors.img}</p>}
                 </div>
                 <div className="formulario">
-                    <label>Vida: </label>
+                    <label>HP: </label>
                     <input type='number' value={input.health} name='health' onChange={(e) => handleChange(e)}/>
                     {errors.health && <p className="error">{errors.health}</p>}
                 </div>
                 <div className="formulario">
-                    <label>Ataque: </label>
+                    <label>Attack: </label>
                     <input type='number' value={input.attack} name='attack' onChange={(e) => handleChange(e)}/>
                     {errors.attack && <p className="error">{errors.attack}</p>}
                 </div>
                 <div className="formulario">
-                    <label>Defensa: </label>
+                    <label>Defense: </label>
                     <input type='number' value={input.defense} name='defense' onChange={(e) => handleChange(e)}/>
                     {errors.defense && <p className="error">{errors.defense}</p>}
                 </div>
                 <div className="formulario">
-                    <label>Velocidad: </label>
+                    <label>Speed: </label>
                     <input type='number' value={input.speed} name='speed' onChange={(e) => handleChange(e)}/>
                     {errors.speed && <p className="error">{errors.speed}</p>}
                 </div>
                 <div className="formulario">
-                    <label>Tamaño: </label>
+                    <label>Height: </label>
                     <input type='number' value={input.height} name='height' onChange={(e) => handleChange(e)}/>
                     {errors.height && <p className="error">{errors.height}</p>}
                 </div>
                 <div className="formulario">
-                    <label>Peso: </label>
+                    <label>Weight: </label>
                     <input type='number' value={input.weight} name='weight' onChange={(e) => handleChange(e)}/>
                     {errors.weight && <p className="error">{errors.weight}</p>}
                 </div>

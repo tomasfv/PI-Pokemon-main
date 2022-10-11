@@ -1,4 +1,4 @@
-![HenryLogo](https://d31uz8lwfmyn8g.cloudfront.net/Assets/logo-henry-white-lg.png)
+<!-- ![HenryLogo](https://d31uz8lwfmyn8g.cloudfront.net/Assets/logo-henry-white-lg.png)
 
 # Individual Project - Henry Pokemon
 
@@ -184,4 +184,10 @@ __IMPORTANTE__: No está permitido utilizar los filtrados, ordenamientos y pagin
 
 - [ ] Al menos tener un componente del frontend con sus tests respectivos
 - [ ] Al menos tener una ruta del backend con sus tests respectivos
-- [ ] Al menos tener un modelo de la base de datos con sus tests respectivos
+- [ ] Al menos tener un modelo de la base de datos con sus tests respectivos -->
+<h1>POKEMON WEB SPA</h1>
+<hr/>
+
+<h3>A website developed with React and pure CSS, useful to get information about Pokémons.</h3>
+<h2>HOME: </h2>
+<img height='300' src="./pokemonHome.jpg" />
