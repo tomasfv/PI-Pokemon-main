@@ -45,7 +45,7 @@ export default function Home(){
     function handleClick(e){            //Reset
         e.preventDefault();             //preventDefault para que cuando recargue no se rompa todo.
         dispatch(getPokemons())         // boton "volver a cargar todos los pokemons"
-        setFilters('')
+        dispatch(filterCreated())
     };
 
     function handleFilterCreated(e){
@@ -96,13 +96,13 @@ export default function Home(){
               <div className='filt-bar'>     
                 <select className='filter' onChange={e => handleSort(e)}>
                     <option value=''>NAME</option>
-                    <option value='asc'>A-z</option>
-                    <option value='Desc'>Z-a</option>
+                    <option value='asc'>A → Z</option>
+                    <option value='Desc'>Z → A</option>
                 </select>
                 <select className='filter' onChange={e => handleAttackSort(e)}>
                     <option value=''>ATTACK</option>
-                    <option value='max'>+ Attack</option>
-                    <option value='min'>- Attack</option>
+                    <option value='max'>+ ATTACK</option>
+                    <option value='min'>- ATTACK</option>
                 </select>
                 <button className='reset' onClick={(e) => {handleClick(e); cambiarEstado()}}>
                     RESET
@@ -111,13 +111,13 @@ export default function Home(){
                 <select className='filter' onChange={e => handleFilterCreated(e)}>
                     <option value=''>ORIGIN</option>
                     <option value='All'>All</option>
-                    <option value='created'>Created</option>
+                    <option value='created'>CREATED</option>
                     <option value='api'>API</option> 
                 </select>
                 <select className='filter' onChange={e => handleFilterType(e)}>             {/* cuando seleccino un tipo, se ejecuta el handle */}
                     <option value=''>TYPE</option>
                     {types.map((t) => (                                 //recorro el estado types y por cada tipo ...
-                            <option value={t.name} key={t.name}>{t.name}</option>   //renderizo un option con el nombre de cada uno en el select
+                            <option value={t.name} key={t.name}>{t.name.toUpperCase()}</option>   //renderizo un option con el nombre de cada uno en el select
                         ))}
                 </select>
             </div>
