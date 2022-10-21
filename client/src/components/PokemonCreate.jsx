@@ -10,39 +10,39 @@ import swal from'sweetalert2';
 function validate(input){                            //va a recibir el estado input con los cambios detectados por los handlers
     let errors = {};                                 //objeto que guarda todos los errores
     if(!input.name){                                //si no hay un nombre...
-        errors.name = 'se requiere un nombre';      //al obj errors le agrego una prop name: 'se requiere un nombre'
+        errors.name = 'a name is required';      //al obj errors le agrego una prop name: 'se requiere un nombre'
     }else if(!/^[A-z]+$/.test(input.name)){          //expresion regular solo acepta letras
-        errors.name = 'solo se aceptan letras'
+        errors.name = 'only letters allowed'
     }else if(!input.img){
-        errors.img = 'se requiere una imagen';
+        errors.img = 'an image is required';
     }else if(!/^https?:\/\/(?:www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[-a-zA-Z0-9()@:%_\+.~#?&\/=]*)$/.test(input.img)){ 
-        errors.img = 'solo se aceptan URL'
+        errors.img = 'only URL directions allowed'
     }else if(input.health < 1 || input.health > 200){
-        errors.health = 'debe ser un valor entre 1 y 200'
+        errors.health = 'must be a value between 1 and 200'
     }else if(!/^[0-9]+$/.test(input.health)){ 
-        errors.health = 'solo se aceptan números'
+        errors.health = 'only numbers allowed'
     }else if(input.attack < 1 || input.attack > 200){
-        errors.attack = 'debe ser un valor entre 1 y 200'
+        errors.attack = 'must be a value between 1 and 200'
     }else if(!/^[0-9]+$/.test(input.attack)){ 
-        errors.attack = 'solo se aceptan números'
+        errors.attack = 'only numbers allowed'
     }else if(input.defense < 1 || input.defense > 200){
-        errors.defense = 'debe ser un valor entre 1 y 200'
+        errors.defense = 'must be a value between 1 and 200'
     }else if(!/^[0-9]+$/.test(input.defense)){ 
-        errors.defense = 'solo se aceptan números'
+        errors.defense = 'only numbers allowed'
     }else if(input.speed < 1 || input.speed > 200){
-        errors.speed = 'debe ser un valor entre 1 y 200'
+        errors.speed = 'must be a value between 1 and 200'
     }else if(!/^[0-9]+$/.test(input.speed)){ 
-        errors.speed = 'solo se aceptan números'
+        errors.speed = 'only numbers allowed'
     }else if(input.height < 1 || input.height > 200){
-        errors.height = 'debe ser un valor entre 1 y 200'
+        errors.height = 'must be a value between 1 and 200'
     }else if(!/^[0-9]+$/.test(input.height)){ 
-        errors.height = 'solo se aceptan números'
+        errors.height = 'only numbers allowed'
     }else if(input.weight < 1 || input.weight > 200){
-        errors.weight = 'debe ser un valor entre 1 y 200'
+        errors.weight = 'must be a value between 1 and 200'
     }else if(!/^[0-9]+$/.test(input.weight)){ 
-        errors.weight = 'solo se aceptan números'
+        errors.weight = 'only numbers allowed'
     }else if(input.type.length < 1){
-        errors.type = 'no puede tener menos de 1 tipo'
+        errors.type = 'select at least 1 type'
     }
         return errors;      //se retorna el obj errors con la prop y el string correspondiente. let errors = {name: 'se requiere un nombre'}
 }
@@ -181,7 +181,7 @@ export default function PokemonCreate(){
                             <option value={t.name}>{t.name}</option>    //renderizo los nombres de tipos en el selector
                             ))} 
                         </select> 
-                        : <p className="error">no puede tener mas de 2 tipos</p>}
+                        : <p className="error">cannot have more than 2 types</p>}
 
                 </div>
                     {errors.type && <p className="error">{errors.type}</p>}   {/*si el estado errors tiene la prop type, renderizo un parrafo con el string de ésta prop */}

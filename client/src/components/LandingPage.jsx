@@ -6,14 +6,19 @@ import { Link } from 'react-router-dom';
 export default function LandingPage(){
     return(
 
-        <div className='img'>
-            <div className='text'>
+        <div className='landing-container'>
+            <div className='text-container'>
+                <div className='landing-text'>
+                     <h1>WELCOME</h1>
+                </div>
                 <div>
-                    <h1>Welcome to Pokémon Web</h1>
                     <Link to ='/home'>
-                    <button className='button'>HOME</button>
+                        <button className='landing-button'>HOME</button>
                     </Link>
-                </div>   
+                </div>
+            </div>
+            <div className='landing-img'>
+                <img src='https://media.tenor.com/8sTMqGWjYAQAAAAC/ball-pokemon.gif'></img>
             </div>
         </div>
         
