@@ -13,7 +13,6 @@ export default function Home(){
     const allPokemons = useSelector ((state) => state.pokemons); //40 de la api
     const types = useSelector((state) => state.types);         //traigo el estado types con todos los tipos que me traje con el useEffect
     const [loading, setLoading] = useState(false);
-    const [filters, setFilters] = useState('')
 
     const cambiarEstado = () => {
         setLoading(true);
@@ -45,19 +44,14 @@ export default function Home(){
     function handleClick(e){            //Reset
         e.preventDefault();             //preventDefault para que cuando recargue no se rompa todo.
         dispatch(getPokemons())         // boton "volver a cargar todos los pokemons"
-        dispatch(filterCreated())
     };
 
     function handleFilterCreated(e){
-        dispatch(filterCreated(e.target.value)) //el value puede ser All/created/api
-        setFilters([...filters, e.target.value + ' - '])
-        
+        dispatch(filterCreated(e.target.value)) //el value puede ser All/created/api    
     }
 
     function handleFilterType(e){
         dispatch(filterType(e.target.value))   //el value será el tipo seleccionado en las opciones del filtro
-        setFilters([...filters, e.target.value + ' - '])
-
     }
 
     function handleSort(e){
@@ -65,19 +59,14 @@ export default function Home(){
         dispatch(orderByName(e.target.value));  //el value puede ser asc/desc 
         setCurrentPage(1);                      //empiezo en la pagina 1
         setOrden(`Ordenado ${e.target.value}`)
-        setFilters([...filters, e.target.value + ' - '])
-
     }
     function handleAttackSort(e){
         e.preventDefault();
         dispatch(orderByAttack(e.target.value)); //el value puede ser asc/desc
         setCurrentPage(1);
         setOrden(`Ordenado ${e.target.value}`)
-        setFilters([...filters, e.target.value + ' - '])
 
     }
-    
-    console.log('FILTERS: ', filters)
 
     return (                                            //Renderizado del Componente
         <div className='prueba'>
@@ -94,13 +83,13 @@ export default function Home(){
             </div>
             <div>
               <div className='filt-bar'>     
-                <select className='filter' onChange={e => handleSort(e)}>
-                    <option value=''>NAME</option>
+                <select className='filter' value='default' onChange={e => handleSort(e)}>
+                    <option value='default' disabled hidden>NAME</option>
                     <option value='asc'>A → Z</option>
                     <option value='Desc'>Z → A</option>
                 </select>
-                <select className='filter' onChange={e => handleAttackSort(e)}>
-                    <option value=''>ATTACK</option>
+                <select className='filter' value='default' onChange={e => handleAttackSort(e)}>
+                    <option value='default' disabled hidden>ATTACK</option>
                     <option value='max'>+ ATTACK</option>
                     <option value='min'>- ATTACK</option>
                 </select>
@@ -108,14 +97,14 @@ export default function Home(){
                     RESET
                 </button>
                 {loading && <img className='buscar-gif' src='https://cdn.dribbble.com/users/621155/screenshots/2835314/simple_pokeball.gif'></img> }
-                <select className='filter' onChange={e => handleFilterCreated(e)}>
-                    <option value=''>ORIGIN</option>
+                <select className='filter' value='default' onChange={e => handleFilterCreated(e)}>
+                    <option value='default' disabled hidden>ORIGIN</option>
                     <option value='All'>All</option>
                     <option value='created'>CREATED</option>
                     <option value='api'>API</option> 
                 </select>
-                <select className='filter' onChange={e => handleFilterType(e)}>             {/* cuando seleccino un tipo, se ejecuta el handle */}
-                    <option value=''>TYPE</option>
+                <select className='filter' value='default' onChange={e => handleFilterType(e)}>             {/* cuando seleccino un tipo, se ejecuta el handle */}
+                    <option value='default' disabled hidden>TYPE</option>
                     {types.map((t) => (                                 //recorro el estado types y por cada tipo ...
                             <option value={t.name} key={t.name}>{t.name.toUpperCase()}</option>   //renderizo un option con el nombre de cada uno en el select
                         ))}
