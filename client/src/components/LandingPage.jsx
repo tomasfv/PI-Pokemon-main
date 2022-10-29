@@ -1,9 +1,19 @@
 import React from 'react';
 import "./LandingPage.css";
 import { Link } from 'react-router-dom';
+import { getPokemons } from '../actions';
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 
 
 export default function LandingPage(){
+
+    const dispatch = useDispatch();
+
+    useEffect (() =>{ 
+        dispatch(getPokemons())
+    });
+
     return(
 
         <div className='landing-container'>

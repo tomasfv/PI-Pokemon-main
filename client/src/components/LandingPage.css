@@ -53,3 +53,27 @@
 .landing-img{
     margin-top: 10%;
 }
+
+@media (max-width: 430px){
+
+    .landing-container{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .landing-text{
+        font-size: 35px;
+        height: 65px;
+        width: 375px;
+    }
+
+    .landing-button{
+        margin-top: 20px;
+    }
+
+   img{
+    height: 300px;
+    width: 300px;
+   }
+}
