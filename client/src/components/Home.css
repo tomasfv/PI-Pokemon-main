@@ -16,9 +16,13 @@ body{
 }
 
 .titulo{
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 50px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     text-shadow: 1px 0px 1px black, -1px 0px 1px black, 0px 1px 1px black, 0px -1px 1px black ;
+}
+
+.titulo-resp{
+    display: none;
 }
 
 .link{
@@ -111,13 +115,47 @@ body{
 .loading-pikachu{
     position:absolute;
     left: 30%;
-    
-     
-
 }
 
-/* @media screen and (max-width: 500px){
-    .loading-charmander{
-        border: solid 5px
+.paginado-resp{
+    display: none;
+}
+
+@media (max-width: 430px){
+    .titulo{
+        display: none;
     }
-} */
+
+    .titulo-resp{
+        display:flex;
+        flex-direction: column;
+        font-size: 12px;
+        font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        text-shadow: 1px 0px 1px black, -1px 0px 1px black, 0px 1px 1px black, 0px -1px 1px black ;
+    }
+
+    .crear{
+        width: 100px;
+    }
+
+    .reset{
+        width: 75px;
+        height: 35px;
+        font-size: 15px;
+        left: 0.5%;
+        
+    }
+
+    .filter{
+        font-size: 10px;
+        width: 69px;
+    }
+
+    .loading-pikachu{
+        left:-15%;
+    }
+
+    .paginado-resp{
+        display: contents;
+    }
+}

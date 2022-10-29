@@ -126,3 +126,10 @@
     cursor: pointer;
     
 }
+
+@media (max-width: 430px){
+    
+    .formulario{
+        left: 87px;
+    }
+}

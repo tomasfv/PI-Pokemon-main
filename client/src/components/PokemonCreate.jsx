@@ -131,7 +131,7 @@ export default function PokemonCreate(){
         <div className="back-create">
             <Link to='/home'><button className="volver-create">BACK</button></Link>
             <h1 className="title-create">CREATE  YOUR  POKÉMON</h1>
-            <form onSubmit={(e) => handleSubmit(e)}>    {/*al clickear el boton de L188 se ejecuta handleSubmit*/}
+            <form className="form" onSubmit={(e) => handleSubmit(e)}>    {/*al clickear el boton de L188 se ejecuta handleSubmit*/}
                 <div className="formulario">
                     <label>Name: </label>
                     <input type='text' value={input.name} name='name' maxLength="22" placeholder="name..." onChange={(e) => handleChange(e)}/> {/*Cuando hay un cambio en el input Nombre se ejecuta handleChange */}

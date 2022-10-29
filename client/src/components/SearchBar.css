@@ -56,3 +56,19 @@
     margin-top: 20px;
 
 }
+
+@media (max-width: 430px) {
+    .input-buscar{
+        width: 100px;
+        height: 20px;
+    }
+
+    .buscar{
+        top:45px;
+    }
+
+    .buscar-gif{
+        width: 55px;
+        height: 50px;
+    }
+}

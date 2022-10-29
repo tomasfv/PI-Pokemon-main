@@ -78,3 +78,9 @@ h2 {
     margin-bottom: 30px;
     /* text-shadow: 1px 0px 1px #C50707, -1px 0px 1px #C50707, 0px 1px 1px #C50707, 0px -1px 1px #C50707; */
 }
+
+@media(max-width: 430px){
+    .pokeball-gif{
+        left:10%;
+    }
+}

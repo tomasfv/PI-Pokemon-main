@@ -73,6 +73,10 @@ export default function Home(){
             <div className='white'>
               <div className='first-navbar'>  
                 <h1 className='titulo'>POKEMON WEB</h1>
+                <div className='titulo-resp'>
+                    <h1 clasName='titulo'>POKEMON</h1>
+                    <h1 clasName='titulo'>WEB</h1>
+                </div>
                 <Link to='/pokemon'><button className='crear'>CREATE</button></Link>
               </div>  
                 <SearchBar/>                         
@@ -140,6 +144,13 @@ export default function Home(){
                                     <img src='https://data.whicdn.com/images/105290823/original.gif' width='350px' height='350px'/>  
                                 </div> }
                             
+                </div>
+                <div className='paginado-resp'>
+                    <Paginado 
+                        pokemonsPerPage = {pokemonsPerPage}     //le paso al comp paginado el estado pPP
+                        allPokemons = {allPokemons.length}      //le paso el numero de la cantidad de elementos del array allPokemons
+                        paginado = {paginado}                   //le paso la func paginado()
+                    />
                 </div>
                 </div>
         </div>
