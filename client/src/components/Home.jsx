@@ -6,6 +6,9 @@ import { Link } from 'react-router-dom';
 import Card from './Card';
 import Paginado from './Paginado';
 import SearchBar from './SearchBar';
+import PikachuGif from '../Imagenes/PikachuGif.gif'
+import PokeballWhiteSpinner from '../Imagenes/PokeballWhiteSpinner.gif'
+
 import './Home.css';
 
 export default function Home(){
@@ -100,7 +103,7 @@ export default function Home(){
                 <button className='reset' onClick={(e) => {handleClick(e); cambiarEstado()}}>
                     RESET
                 </button>
-                {loading && <img className='buscar-gif' src='https://cdn.dribbble.com/users/621155/screenshots/2835314/simple_pokeball.gif'></img> }
+                {loading && <img className='buscar-gif' src={PokeballWhiteSpinner}></img> }
                 <select className='filter' value='default' onChange={e => handleFilterCreated(e)}>
                     <option value='default' disabled hidden>ORIGIN</option>
                     <option value='All'>All</option>
@@ -141,7 +144,7 @@ export default function Home(){
                             </div>
                             );
                         }) :    <div className='loading-pikachu'>    {/*sino, renderizo loading */}
-                                    <img src='https://data.whicdn.com/images/105290823/original.gif' width='350px' height='350px'/>  
+                                    <img src={PikachuGif} width='350px' height='350px'/>  
                                 </div> }
                             
                 </div>

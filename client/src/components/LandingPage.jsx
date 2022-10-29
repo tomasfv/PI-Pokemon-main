@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { getPokemons, getTypes } from '../actions';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
+import PokeballSpinning from '../Imagenes/PokeballSpinning.gif'
 
 
 export default function LandingPage(){
@@ -29,7 +30,7 @@ export default function LandingPage(){
                 </div>
             </div>
             <div className='landing-img'>
-                <img src='https://media.tenor.com/8sTMqGWjYAQAAAAC/ball-pokemon.gif'></img>
+                <img src={PokeballSpinning}></img>
             </div>
         </div>
         

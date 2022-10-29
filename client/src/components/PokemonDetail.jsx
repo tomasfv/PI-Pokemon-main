@@ -9,6 +9,7 @@ import { AiOutlineColumnHeight, AiOutlineNumber } from "react-icons/ai";
 import { FaBalanceScaleLeft } from "react-icons/fa";
 import { MdCatchingPokemon } from "react-icons/md";
 import './PokemonDetail.css'
+import pokeballEye from '../Imagenes/pokeballEye.gif'
 
 export default function PokemonDetail(){
     const dispatch = useDispatch();
@@ -48,7 +49,7 @@ export default function PokemonDetail(){
                     <h2><FaBalanceScaleLeft/> WEIGHT: {myPokemon[0].weight}</h2>
                     <h2><AiOutlineNumber/> ID: {myPokemon[0].id}</h2>                    
                     </div>
-                </div> : <img src="https://vincentrenault.fr/wp-content/uploads/2019/11/pokeball.gif" className="pokeball-gif"/>      //si está vacio, renderizo esto
+                </div> : <img src={pokeballEye} className="pokeball-gif"/>      //si está vacio, renderizo esto
             }
             
                 <button className="volver" onClick={ e => handleBack(e)}>BACK</button>    {/*al clickear en volver ejecuto handleBack() */}

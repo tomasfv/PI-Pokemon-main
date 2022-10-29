@@ -23,8 +23,8 @@
 
 .card:hover{
     /* background-image: url('https://cdn.dribbble.com/users/283669/screenshots/2851144/gogogo.gif'); */
-    background-image: url('http://pa1.narvii.com/5728/08fe60cb95373d1f6826069f7c3fa0e761f7c7d8_00.gif');
-    /* background-image: url('https://cdn.dribbble.com/users/621155/screenshots/2835314/simple_pokeball.gif'); */
+    /* background-image: url('http://pa1.narvii.com/5728/08fe60cb95373d1f6826069f7c3fa0e761f7c7d8_00.gif'); */
+    background-image: url('../Imagenes/PokeballBlackRedSpinner.gif');
     background-color: black;
     background-size:cover;
     background-repeat: no-repeat;
