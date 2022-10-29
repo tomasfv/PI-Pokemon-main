@@ -82,5 +82,17 @@ h2 {
 @media(max-width: 430px){
     .pokeball-gif{
         left:10%;
+        top: 30%
     }
+
+    h2{
+        font-size: 23px;
+    }
+
+    img {
+        height: 220px;
+        width: 220px;
+    }
+
+   
 }
