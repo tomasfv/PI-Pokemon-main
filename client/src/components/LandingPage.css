@@ -54,7 +54,7 @@
     margin-top: 10%;
 }
 
-@media (max-width: 430px){
+@media (max-width: 1030px){
 
     .landing-container{
         flex-direction: column;

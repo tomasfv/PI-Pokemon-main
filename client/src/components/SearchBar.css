@@ -57,7 +57,7 @@
 
 }
 
-@media (max-width: 430px) {
+@media (max-width: 1030px) {
     .input-buscar{
         width: 100px;
         height: 20px;
