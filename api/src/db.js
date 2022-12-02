@@ -5,30 +5,30 @@ const path = require('path');
 const { DB_USER, DB_PASSWORD, DB_HOSTPG, DB_NAME, DB_DATABASE, DB_PORT } = process.env;
 //DEPLOY
 let sequelize =
-	process.env.NODE_ENV === 'production'
-		? new Sequelize({
-				database: DB_NAME,
-				dialect: 'postgres',
-				host: DB_HOSTPG,
-				port: 5432,
-				username: DB_USER,
-				password: DB_PASSWORD,
-				pool: {
-					max: 3,
-					min: 1,
-					idle: 10000,
-				},
-				dialectOptions: {
-					ssl: {
-						require: true,
-						// Ref.: https://github.com/brianc/node-postgres/issues/2009
-						rejectUnauthorized: false,
-					},
-					keepAlive: true,
-				},
-				ssl: true,
-		  })
-		: new Sequelize(
+	// process.env.NODE_ENV === 'production'
+	// 	? new Sequelize({
+	// 			database: DB_NAME,
+	// 			dialect: 'postgres',
+	// 			host: DB_HOSTPG,
+	// 			port: 6224,
+	// 			username: DB_USER,
+	// 			password: DB_PASSWORD,
+	// 			pool: {
+	// 				max: 3,
+	// 				min: 1,
+	// 				idle: 10000,
+	// 			},
+	// 			dialectOptions: {
+	// 				ssl: {
+	// 					require: true,
+	// 					// Ref.: https://github.com/brianc/node-postgres/issues/2009
+	// 					rejectUnauthorized: false,
+	// 				},
+	// 				keepAlive: true,
+	// 			},
+	// 			ssl: true,
+	// 	  }) :
+		new Sequelize(
 				// `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/pokemon`,		//datos del .env. Logging
 				`postgresql://${DB_USER}:${DB_PASSWORD}@${DB_HOSTPG}:${DB_PORT}/${DB_DATABASE}`,
 				{ logging: false, native: false }

@@ -11,7 +11,7 @@ import axios from 'axios';
 
 dotenv.config();
 
-axios.defaults.baseURL = process.env.REACT_APP_API || 'http://localhost:3001';  //deploy punta al localhost de back
+//axios.defaults.baseURL = process.env.REACT_APP_API || 'http://localhost:3001';  //deploy punta al localhost de back
 
 ReactDOM.render(
   <Provider store={store}>
