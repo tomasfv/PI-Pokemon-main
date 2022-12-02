@@ -12,7 +12,7 @@ import axios from 'axios';
 dotenv.config();
 
 // axios.defaults.baseURL = 'http://localhost:3001';  //deploy (descomentar para trabajar en localhost)
-axios.defaults.baseURL = 'https://pokemon-backend-production-f73e.up.railway.app';  //deploy (descomentar para trabajar en deploy)
+axios.defaults.baseURL = 'https://pokemon-backend-production-f73e.up.railway.app/';  //deploy (descomentar para trabajar en deploy)
 
 ReactDOM.render(
   <Provider store={store}>
