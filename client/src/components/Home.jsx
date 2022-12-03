@@ -26,8 +26,8 @@ export default function Home(){
 
     //PAGINADO.
     const [currentPage, setCurrentPage] = useState(1);                      //La Home abre en la primera página
-    const [pokemonsPerPage, setPokemonsPerPage] = useState(12);             //Quiero 12 pokemons por página
-    const [orden, setOrden] = useState("");
+    const [pokemonsPerPage, /*setPokemonsPerPage*/] = useState(12);             //Quiero 12 pokemons por página
+    const [/*orden*/, setOrden] = useState("");
     const indexOfLastPokemon = currentPage * pokemonsPerPage   //12         //índice del último pokemon que tengo en la página
     const indexOfFirstPokemon = indexOfLastPokemon - pokemonsPerPage //0    //índice del primer pokemon
     const currentPokemons = allPokemons.slice(indexOfFirstPokemon, indexOfLastPokemon) //pokemons en mi home. Array del estado.
@@ -77,8 +77,8 @@ export default function Home(){
               <div className='first-navbar'>  
                 <h1 className='titulo'>POKEMON WEB</h1>
                 <div className='titulo-resp'>
-                    <h1 clasName='titulo'>POKEMON</h1>
-                    <h1 clasName='titulo'>WEB</h1>
+                    <h1 className='titulo'>POKEMON</h1>
+                    <h1 className='titulo'>WEB</h1>
                 </div>
                 <Link to='/pokemon'><button className='crear'>CREATE</button></Link>
               </div>  
@@ -103,7 +103,7 @@ export default function Home(){
                 <button className='reset' onClick={(e) => {handleClick(e); cambiarEstado()}}>
                     RESET
                 </button>
-                {loading && <img className='buscar-gif' src={PokeballWhiteSpinner}></img> }
+                {loading && <img className='buscar-gif' src={PokeballWhiteSpinner} alt='busc'></img> }
                 <select className='filter' value='default' onChange={e => handleFilterCreated(e)}>
                     <option value='default' disabled hidden>ORIGIN</option>
                     <option value='All'>All</option>
@@ -129,7 +129,7 @@ export default function Home(){
                     {currentPokemons.length > 0 ?       //si el estado pokemons tiene algo...
                     currentPokemons?.map((p) => {       //recorro todos los pokemons
                          return (
-                            <div>
+                            <div key={p.name}>
                                 <Link to={"/home/" + p.id} className='link'>
                                     <div>
                                         <Card                   //le paso al comp card:
@@ -144,7 +144,7 @@ export default function Home(){
                             </div>
                             );
                         }) :    <div className='loading-pikachu'>    {/*sino, renderizo loading */}
-                                    <img src={PikachuGif} width='350px' height='350px'/>  
+                                    <img src={PikachuGif} alt='' width='350px' height='350px'/>  
                                 </div> }
                             
                 </div>

@@ -49,7 +49,7 @@ export default function PokemonDetail(){
                     <h2><FaBalanceScaleLeft/> WEIGHT: {myPokemon[0].weight}</h2>
                     <h2><AiOutlineNumber/> ID: {myPokemon[0].id}</h2>                    
                     </div>
-                </div> : <img src={pokeballEye} className="pokeball-gif"/>      //si está vacio, renderizo esto
+                </div> : <img src={pokeballEye} alt='' className="pokeball-gif"/>      //si está vacio, renderizo esto
             }
             
                 <button className="volver" onClick={ e => handleBack(e)}>BACK</button>    {/*al clickear en volver ejecuto handleBack() */}

@@ -30,7 +30,7 @@ export default function LandingPage(){
                 </div>
             </div>
             <div className='landing-img'>
-                <img src={PokeballSpinning}></img>
+                <img src={PokeballSpinning} alt=''></img>
             </div>
         </div>
         

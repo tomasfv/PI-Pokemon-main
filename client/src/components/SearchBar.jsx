@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState,  } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { getNamePokemons } from '../actions';
 import './SearchBar.css'
 
@@ -37,7 +37,7 @@ export default function SearchBar() {
         <div className='search-div'>
             <input className='input-buscar' type = 'text' placeholder = 'search...' onChange={(e) => handleInputChange(e)} />
             <button className='buscar' type = 'submit' onClick={(e) => { handleSubmit(e); cambiarEstado()}}>GO</button>
-            {loading && <img className='buscar-gif' src='https://cdn.dribbble.com/users/621155/screenshots/2835314/simple_pokeball.gif'></img> }
+            {loading && <img className='buscar-gif' src='https://cdn.dribbble.com/users/621155/screenshots/2835314/simple_pokeball.gif' alt=''></img> }
             
                 
 
